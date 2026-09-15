@@ -11,15 +11,18 @@ import SimpleTracer
 
 struct ContentView: View {
     @State var traceLog: String = ""
+    @State var trace: SimpleTracer?
     
     var body: some View {
         VStack {
             Button("Start") {
-                SimpleTracer.trace(host: "apple.com", maxTraceTTL: 15) { (result) in
+                trace = SimpleTracer(host: "apple.com", maxTraceTTL: 15) { (result) in
                     traceLog += "\(result.info())\n"
                     
                     print(result)
                 }
+                
+                trace?.start()
             }
             
             Text(traceLog)

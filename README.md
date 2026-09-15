@@ -2,15 +2,13 @@
 
 Simple trace route with simple ping, almost simply in Swift.
 
-基于 ping 并采用 Swift 构建的简单 `traceroute`，用于检测客户端与服务主机之间的网络状况。
+A simple `traceroute` tool built with Swift and based on `ping`, designed to assess network conditions between a client and a host.
 
 ![Demo](./assets/demo.gif)
 
-## Usage 用法
-
+## Usage
 ```swift
-SimpleTracer.trace(host: testCase.host, 
-                   maxTraceTTL: 15) { result in
+let tracer = SimpleTracer(host: testCase.host, maxTraceTTL: 15) { result in
     print(result)
     /**
      Start tracing www.bearychat.com: 54.223.220.218
@@ -33,9 +31,11 @@ SimpleTracer.trace(host: testCase.host,
      #14 reach the destination 54.223.220.218, trace completed. It's simple! Right?
      ***/
 }
+
+tracer.start()
 ```
 
-## Test cases 示例
+## Test cases
 
 ![](./assets/more_cases.jpg)
 

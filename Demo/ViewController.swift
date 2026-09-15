@@ -33,6 +33,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var hostLabel: UILabel!
     @IBOutlet weak var resultTextView: UITextView!
     
+    private var tracer: SimpleTracer?
+    
     private var testCase: TraceTestCase = .apple {
         didSet {
             hostLabel.text = testCase.host
@@ -53,7 +55,7 @@ class ViewController: UIViewController {
     
     @IBAction func startTraceAction(_ sender: Any) {
         resultTextView.text = ""
-        SimpleTracer.trace(host: testCase.host, maxTraceTTL: 15) { [weak self] (result) in
+        tracer = SimpleTracer(host: testCase.host, maxTraceTTL: 15) { [weak self] (result) in
             self?.resultTextView.text += "\(result.info())\n"
 
             print(result)
@@ -78,6 +80,8 @@ class ViewController: UIViewController {
              #14 reach the destination 54.223.220.218, trace completed. It's simple! Right?
              ***/
         }
+        
+        tracer?.start()
     }
     
 }

@@ -1,11 +1,11 @@
-// swift-tools-version:5.5
+// swift-tools-version:6.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "SimpleTracer",
-    platforms: [.macOS(.v11), .iOS(.v14)],
+    platforms: [.macOS(.v14), .iOS(.v17)],
     products: [
         .library(
             name: "SimpleTracer",
@@ -22,5 +22,5 @@ let package = Package(
             dependencies: [.product(name: "SimplePing", package: "SimplePing")]
         )
     ],
-    swiftLanguageVersions: [.v5]
+    swiftLanguageModes: [.v6]
 )

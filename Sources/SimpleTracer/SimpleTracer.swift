@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import SimplePing
 import os
+import SimplePing
 
 public protocol SimpleTracerLogger: AnyObject {
     func logTrace(_ step: TraceStep)
@@ -23,35 +23,24 @@ public class SimpleTracer: NSObject {
     private var ipAddress: String?
     private var icmpSrcAddress: String?
     
-    private var currentTTL: Int = 0
+    private var currentTTL: Int = .zero
     private var packetCountPerTTL: Int?
-    private var maxTraceTTL: Int = 30
-    private var sendSequence: UInt16 = 0
+    private var maxTraceTTL: Int
+    private var sendSequence: UInt16 = .zero
     
     private var startDate: Date?
     private var sendTimer: Timer?
     private var sendTimeoutTimer: Timer?
     
-    private(set) var result: [TraceStep] = []
+    private(set) var result: [TraceStep] = .init()
     private var logger: ((TraceStep) -> Void)?
     
-    public init(host: String) {
+    public init(host: String, maxTraceTTL: Int = 30, logger: ((TraceStep) -> Void)?) {
         self.host = host
+        self.logger = logger
+        self.maxTraceTTL = maxTraceTTL
+        
         super.init()
-    }
-    
-    private static var _current: SimpleTracer?
-    
-    @discardableResult
-    public static func trace(host: String, maxTraceTTL: Int = 30, logger: ((TraceStep) -> Void)?) -> SimpleTracer {
-        let tracer = SimpleTracer(host: host)
-        tracer.logger = logger
-        tracer.maxTraceTTL = maxTraceTTL
-        
-        _current = tracer
-        _current?.start()
-        
-        return _current!
     }
     
     public func start() {
@@ -83,15 +72,15 @@ extension TraceStep {
     public func info() -> String {
         switch self {
         case .start(let host, let ip, let ttl):
-            return "Start tracing \(host): \(ip) ttl: \(ttl)"
+            "Start tracing \(host): \(ip) ttl: \(ttl)"
         case .router(let step, let ip, let duration):
-            return "#\(step) \(ip) \t\(duration)ms"
+            "#\(step) \(ip) \t\(duration)ms"
         case .routerDoesNotRespond(let step):
-            return "#\(step) * * *"
+            "#\(step) * * *"
         case .finished(let step, let ip, let latency):
-            return "#\(step) \(ip) \t\(latency)ms\nDone!"
+            "#\(step) \(ip) \t\(latency)ms\nDone!"
         case .failed(let error):
-            return error
+            error
         }
     }
 }
@@ -116,7 +105,7 @@ private extension SimpleTracer {
     }
     
     func sendPing(withTTL ttl: Int) {
-        packetCountPerTTL = 0
+        packetCountPerTTL = .zero
         
         pinger?.setTTL(ttl)
         pinger?.sendPing()
@@ -145,22 +134,21 @@ extension SimpleTracer {
     ///
     /// - returns: A string representation of that address.
     
-    static func displayAddressForAddress(address: Data) -> String {
-        var hostStr = [Int8](repeating: 0, count: Int(NI_MAXHOST))
+    static func displayAddressFor(data: Data) -> String {
+        var hostStr = [UInt8](repeating: 0, count: Int(NI_MAXHOST))
         
-        let success = getnameinfo(address.unsafeBytes.assumingMemoryBound(to: sockaddr.self),
-                                  socklen_t(address.count),
+        let success = getnameinfo(data.unsafeBytes.assumingMemoryBound(to: sockaddr.self),
+                                  socklen_t(data.count),
                                   &hostStr,
                                   socklen_t(hostStr.count),
                                   nil,
                                   0,
                                   NI_NUMERICHOST
         ) == 0
-        let result: String
-        if success {
-            result = String(cString: hostStr)
+        let result: String = if success {
+            String(bytes: hostStr, encoding: .utf8) ?? "?"
         } else {
-            result = "?"
+            "?"
         }
         return result
     }
@@ -218,7 +206,7 @@ extension SimpleTracer: SimplePingDelegate {
         assert(startDate != nil)
         let interval = Date().timeIntervalSince(startDate!)
         
-        if packetCountPerTTL == 0, let srcAddr = packet.srcAddress() {
+        if packetCountPerTTL == .zero, let srcAddr = packet.srcAddress() {
             icmpSrcAddress = srcAddr
             self.packetCountPerTTL! += 1
             let msg = interval * 1000

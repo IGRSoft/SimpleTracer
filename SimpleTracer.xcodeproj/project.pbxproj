@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 100;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,12 +13,13 @@
 		07AF13892178AD350064D404 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07AF13872178AD350064D404 /* Main.storyboard */; };
 		07AF138B2178AD370064D404 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07AF138A2178AD370064D404 /* Assets.xcassets */; };
 		07AF138E2178AD370064D404 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07AF138C2178AD370064D404 /* LaunchScreen.storyboard */; };
-		A535F5D727B957310096D0C3 /* SimpleTracer in Frameworks */ = {isa = PBXBuildFile; productRef = A535F5D627B957310096D0C3 /* SimpleTracer */; };
+		A506C7A23059466D00B17D79 /* SimpleTracer in Frameworks */ = {isa = PBXBuildFile; productRef = A506C7A13059466D00B17D79 /* SimpleTracer */; };
+		A506C7A43059468600B17D79 /* SimpleTracer in Frameworks */ = {isa = PBXBuildFile; productRef = A506C7A33059468600B17D79 /* SimpleTracer */; };
+		A51FB3F33059550900EA2E4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51FB3F13059525B00EA2E4D /* SceneDelegate.swift */; };
 		A56C000127A84D3F00CB137B /* DemoMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C000027A84D3F00CB137B /* DemoMacApp.swift */; };
 		A56C000327A84D3F00CB137B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C000227A84D3F00CB137B /* ContentView.swift */; };
 		A56C000527A84D4100CB137B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56C000427A84D4100CB137B /* Assets.xcassets */; };
 		A56C000827A84D4100CB137B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56C000727A84D4100CB137B /* Preview Assets.xcassets */; };
-		A589FDA227AD7AF6005A2E3C /* SimpleTracer in Frameworks */ = {isa = PBXBuildFile; productRef = A589FDA127AD7AF6005A2E3C /* SimpleTracer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		07AF138A2178AD370064D404 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07AF138D2178AD370064D404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07AF138F2178AD370064D404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A51FB3F13059525B00EA2E4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A56C000027A84D3F00CB137B /* DemoMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMacApp.swift; sourceTree = "<group>"; };
 		A56C000227A84D3F00CB137B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A56C000427A84D4100CB137B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,26 +45,20 @@
 /* Begin PBXFrameworksBuildPhase section */
 		07AF135B217889820064D404 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		07AF137E2178AD350064D404 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
-				A589FDA227AD7AF6005A2E3C /* SimpleTracer in Frameworks */,
+				A506C7A43059468600B17D79 /* SimpleTracer in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A56CFFFB27A84D3F00CB137B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
-				A535F5D727B957310096D0C3 /* SimpleTracer in Frameworks */,
+				A506C7A23059466D00B17D79 /* SimpleTracer in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -101,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				07AF13832178AD350064D404 /* AppDelegate.swift */,
+				A51FB3F13059525B00EA2E4D /* SceneDelegate.swift */,
 				07AF13852178AD350064D404 /* ViewController.swift */,
 				07AF13872178AD350064D404 /* Main.storyboard */,
 				07AF138A2178AD370064D404 /* Assets.xcassets */,
@@ -150,8 +147,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = SimpleTracerTests;
 			productName = SimpleTracerTests;
 			productReference = 07AF135E217889820064D404 /* SimpleTracerTests.xctest */;
@@ -167,11 +162,9 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = Demo;
 			packageProductDependencies = (
-				A589FDA127AD7AF6005A2E3C /* SimpleTracer */,
+				A506C7A33059468600B17D79 /* SimpleTracer */,
 			);
 			productName = Demo;
 			productReference = 07AF13812178AD350064D404 /* Demo.app */;
@@ -187,11 +180,9 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = DemoMac;
 			packageProductDependencies = (
-				A535F5D627B957310096D0C3 /* SimpleTracer */,
+				A506C7A13059466D00B17D79 /* SimpleTracer */,
 			);
 			productName = DemoMac;
 			productReference = A56CFFFE27A84D3F00CB137B /* DemoMac.app */;
@@ -205,7 +196,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 2700;
 				ORGANIZATIONNAME = "Beary Innovative";
 				TargetAttributes = {
 					07AF135D217889820064D404 = {
@@ -220,7 +211,6 @@
 				};
 			};
 			buildConfigurationList = 07AF134F217889820064D404 /* Build configuration list for PBXProject "SimpleTracer" */;
-			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -228,9 +218,11 @@
 				Base,
 			);
 			mainGroup = 07AF134B217889810064D404;
+			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A589FDA027AD7AF6005A2E3C /* XCRemoteSwiftPackageReference "SimpleTracer" */,
+				A506C7A03059466D00B17D79 /* XCLocalSwiftPackageReference "../SimpleTracer" */,
 			);
+			preferredProjectObjectVersion = 100;
 			productRefGroup = 07AF1356217889820064D404 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -245,58 +237,47 @@
 /* Begin PBXResourcesBuildPhase section */
 		07AF135C217889820064D404 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		07AF137F2178AD350064D404 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				07AF138E2178AD370064D404 /* LaunchScreen.storyboard in Resources */,
 				07AF138B2178AD370064D404 /* Assets.xcassets in Resources */,
 				07AF13892178AD350064D404 /* Main.storyboard in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A56CFFFC27A84D3F00CB137B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				A56C000827A84D4100CB137B /* Preview Assets.xcassets in Resources */,
 				A56C000527A84D4100CB137B /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		07AF135A217889820064D404 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				07AF1364217889820064D404 /* SimpleTracerTests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		07AF137D2178AD350064D404 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				07AF13862178AD350064D404 /* ViewController.swift in Sources */,
 				07AF13842178AD350064D404 /* AppDelegate.swift in Sources */,
+				A51FB3F33059550900EA2E4D /* SceneDelegate.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A56CFFFA27A84D3F00CB137B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				A56C000327A84D3F00CB137B /* ContentView.swift in Sources */,
 				A56C000127A84D3F00CB137B /* DemoMacApp.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -320,14 +301,14 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		07AF1367217889820064D404 /* Debug */ = {
+		07AF1367217889820064D404 /* Debug configuration for PBXProject "SimpleTracer" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++23";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -361,7 +342,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu23;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -375,28 +356,29 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		07AF1368217889820064D404 /* Release */ = {
+		07AF1368217889820064D404 /* Release configuration for PBXProject "SimpleTracer" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++23";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -430,7 +412,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu23;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -438,24 +420,24 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		07AF136D217889820064D404 /* Debug */ = {
+		07AF136D217889820064D404 /* Debug configuration for PBXNativeTarget "SimpleTracerTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -465,15 +447,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bearychat.SimpleTracerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		07AF136E217889820064D404 /* Release */ = {
+		07AF136E217889820064D404 /* Release configuration for PBXNativeTarget "SimpleTracerTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -483,12 +463,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bearychat.SimpleTracerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		07AF13912178AD370064D404 /* Debug */ = {
+		07AF13912178AD370064D404 /* Debug configuration for PBXNativeTarget "Demo" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -504,7 +483,7 @@
 			};
 			name = Debug;
 		};
-		07AF13922178AD370064D404 /* Release */ = {
+		07AF13922178AD370064D404 /* Release configuration for PBXNativeTarget "Demo" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -520,12 +499,11 @@
 			};
 			name = Release;
 		};
-		A56C000B27A84D4100CB137B /* Debug */ = {
+		A56C000B27A84D4100CB137B /* Debug configuration for PBXNativeTarget "DemoMac" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = DemoMac/DemoMac.entitlements;
 				CODE_SIGN_IDENTITY = "-";
@@ -543,7 +521,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igrsoft.DemoMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -552,12 +529,11 @@
 			};
 			name = Debug;
 		};
-		A56C000C27A84D4100CB137B /* Release */ = {
+		A56C000C27A84D4100CB137B /* Release configuration for PBXNativeTarget "DemoMac" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = DemoMac/DemoMac.entitlements;
 				CODE_SIGN_IDENTITY = "-";
@@ -575,7 +551,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igrsoft.DemoMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -590,61 +565,52 @@
 		07AF134F217889820064D404 /* Build configuration list for PBXProject "SimpleTracer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07AF1367217889820064D404 /* Debug */,
-				07AF1368217889820064D404 /* Release */,
+				07AF1367217889820064D404 /* Debug configuration for PBXProject "SimpleTracer" */,
+				07AF1368217889820064D404 /* Release configuration for PBXProject "SimpleTracer" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		07AF136C217889820064D404 /* Build configuration list for PBXNativeTarget "SimpleTracerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07AF136D217889820064D404 /* Debug */,
-				07AF136E217889820064D404 /* Release */,
+				07AF136D217889820064D404 /* Debug configuration for PBXNativeTarget "SimpleTracerTests" */,
+				07AF136E217889820064D404 /* Release configuration for PBXNativeTarget "SimpleTracerTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		07AF13902178AD370064D404 /* Build configuration list for PBXNativeTarget "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07AF13912178AD370064D404 /* Debug */,
-				07AF13922178AD370064D404 /* Release */,
+				07AF13912178AD370064D404 /* Debug configuration for PBXNativeTarget "Demo" */,
+				07AF13922178AD370064D404 /* Release configuration for PBXNativeTarget "Demo" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		A56C000A27A84D4100CB137B /* Build configuration list for PBXNativeTarget "DemoMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A56C000B27A84D4100CB137B /* Debug */,
-				A56C000C27A84D4100CB137B /* Release */,
+				A56C000B27A84D4100CB137B /* Debug configuration for PBXNativeTarget "DemoMac" */,
+				A56C000C27A84D4100CB137B /* Release configuration for PBXNativeTarget "DemoMac" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		A589FDA027AD7AF6005A2E3C /* XCRemoteSwiftPackageReference "SimpleTracer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/IGRSoft/SimpleTracer";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.1;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		A506C7A03059466D00B17D79 /* XCLocalSwiftPackageReference "../SimpleTracer" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SimpleTracer;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A535F5D627B957310096D0C3 /* SimpleTracer */ = {
+		A506C7A13059466D00B17D79 /* SimpleTracer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A589FDA027AD7AF6005A2E3C /* XCRemoteSwiftPackageReference "SimpleTracer" */;
 			productName = SimpleTracer;
 		};
-		A589FDA127AD7AF6005A2E3C /* SimpleTracer */ = {
+		A506C7A33059468600B17D79 /* SimpleTracer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A589FDA027AD7AF6005A2E3C /* XCRemoteSwiftPackageReference "SimpleTracer" */;
+			package = A506C7A03059466D00B17D79 /* XCLocalSwiftPackageReference "../SimpleTracer" */;
 			productName = SimpleTracer;
 		};
 /* End XCSwiftPackageProductDependency section */
