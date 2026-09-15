@@ -14,7 +14,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/IGRSoft/SimplePing.git",
-            from: "0.1.1")
+            from: "0.1.2")
     ],
     targets: [
         .target(
